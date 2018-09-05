@@ -66,25 +66,56 @@
             •Andar (decrementa M unidades por km recorrido)
             •Cargar (Incrementa el combustible N unidades)
             •Pintar (cambia el color del vehículo)
+
+        Crear una clase auto que herede de vehículos:
+            •Instanciar el objeto y definir las propiedades de vehículos
+            •Agregar un atributo que indique si el auto es taxi (solo
+            para la clase auto).
+            •Crear la clase moto que herede de vehículos:
+            •Instanciar el objeto y definir las propiedades de vehículos
+            •Agregar un método wheelie (decrementa la cantidad de
+            combustible en 5)
+            •Crear la clase camioneta que herede de vehículos, definir 2
+            atributos y 2 métodos propios de camioneta que no sean
+            compartidos por auto y moto.
         */
 
         class Vehiculos  {
             constructor(combustible, marca, modelo, cantidadDeRuedas)  {
-                this.combustible = 0;
-                this.marca = '';
-                this.modelo = '';
-                this.cantidadDeRuedas = '';
-                this.encender = function(num){
-                    this.combustible += (num)
-                };
-                this.andar = function(num)  {
+                this.combustible = combustible;
+                this.marca = marca;
+                this.modelo = modelo;
+                this.cantidadDeRuedas = cantidadDeRuedas;
+            }
+            andar(num) {
+                this.combustible += (num)
+            }
+            pintar(color) {
+                this.color = color;
+            }
+            cargar(comb) {
 
-                };
-                this.cargar = function(num) {
-
-                };
-                this.pintar = function(num) {
-
-                };
             }
         }
+
+        class Auto extends Vehiculos  {
+            constructor(combustible, marca, modelo, taxi) {
+                super(combustible, marca, modelo , 4)
+                this.taxi = taxi;
+            }
+        }
+
+        class Moto extends Vehiculos {
+
+        }
+
+        class Camioneta extends Vehiculos {
+
+        }
+
+        var auto = new Vehiculos('hola', 'bmw', '1992', '4')
+
+        var auto2 = new Auto( 'chau', 'renault', '2005', '4')
+
+        console.log(auto)
+        console.log(auto2)
