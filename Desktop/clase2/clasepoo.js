@@ -87,6 +87,9 @@
                 this.modelo = modelo;
                 this.cantidadDeRuedas = cantidadDeRuedas;
             }
+            encender(comb) {
+                this.combustible -= (this.combustible-comb) 
+            }
             andar(num) {
                 this.combustible += (num)
             }
@@ -103,6 +106,9 @@
                 super(combustible, marca, modelo , 4)
                 this.taxi = taxi;
             }
+            encender(comb) {
+                this.combustible = (this.combustible-comb) 
+            }
         }
 
         class Moto extends Vehiculos {
@@ -113,9 +119,9 @@
 
         }
 
-        var auto = new Vehiculos('hola', 'bmw', '1992', '4')
+        var auto = new Vehiculos(200, 'bmw', '1992', '4')
 
-        var auto2 = new Auto( 'chau', 'renault', '2005', '4')
-
+        var auto2 = new Auto( 50, 'renault', '2005', '4')
+        auto2.encender(2)
         console.log(auto)
         console.log(auto2)
